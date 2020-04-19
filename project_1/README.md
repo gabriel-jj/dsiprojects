@@ -36,7 +36,7 @@ These data give average SAT and ACT scores by state, as well as participation ra
 
 |Feature|Type|Dataset|Description|
 |:---|:---|---|:---|
-|**state**|*object*|ACT 2017|The states in the United States of America
+|**state**|*object*|Final|The states in the United States of America
 |**act_part**|*float*|ACT 2017|The percent of the graduates tested (units percent to two decimal places 0.98 means 98%)
 |**act_eng**|*float*|ACT 2017|The average score of the language on a scale of 1-36
 |**act_math**|*float*|ACT 2017|The average score of the language on a scale of 1-36
