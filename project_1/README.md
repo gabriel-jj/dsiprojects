@@ -36,7 +36,7 @@ These data give average SAT and ACT scores by state, as well as participation ra
 
 |Feature|Type|Dataset|Description|
 |:---|:---|---|:---|
-|**state**|*object*|ACT 2017|The states in the United States of America
+|**state**|*object*|Final|The states in the United States of America
 |**act_part**|*float*|ACT 2017|The percent of the graduates tested (units percent to two decimal places 0.98 means 98%)
 |**act_eng**|*float*|ACT 2017|The average score of the language on a scale of 1-36
 |**act_math**|*float*|ACT 2017|The average score of the language on a scale of 1-36
@@ -53,7 +53,7 @@ These data give average SAT and ACT scores by state, as well as participation ra
 |**act18_read**|*float*|ACT 2018|The average score of the language on a scale of 1-36
 |**act18_sci**|*float*|ACT 2018|The average score of the language on a scale of 1-36
 |**act18_comp**|*float*|ACT 2018|The average composite score of all the language on a scale of 1-36
-|**sat_part**|*float*|SAT 2018|The percent of the graduates tested (units percent to two decimal places 0.98 means 98%)
-|**sat_ebrw**|*int*|SAT 2018|The score of evidence-based reading and writing on a scale of 200-800
-|**sat_math**|*int*|SAT 2018|The score of math on a scale of 200-800
-|**sat_total**|*int*|SAT 2018|The total score of all the languages on a scale of 400-1600
+|**sat18_part**|*float*|SAT 2018|The percent of the graduates tested (units percent to two decimal places 0.98 means 98%)
+|**sat18_ebrw**|*int*|SAT 2018|The score of evidence-based reading and writing on a scale of 200-800
+|**sat18_math**|*int*|SAT 2018|The score of math on a scale of 200-800
+|**sat18_total**|*int*|SAT 2018|The total score of all the languages on a scale of 400-1600
