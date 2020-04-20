@@ -3,7 +3,7 @@
 ## Gabriel Choo, SG DSI 14
 
 ### Problem Statement
-The participation rate of ACT has decreased from year 2017 to 2018, in contrast to SAT which increases from year 2017 to 2018. In order to boost it's market share in the various states, what strategies can be implemented to encourage the graduates of that state to take the ACT college admission test?
+The participation rate of SAT has generally been lower than ACT in 2017 and 2018. In order to boost it's market share in the various states, what strategies can be implemented to encourage the graduates of that state to take the SAT college admission test?
 
 ### Executive Summary
 
@@ -13,7 +13,7 @@ The study included a detailed look at the aggregate scores and participation rat
 
 It has been observed the participation rate is greatly influenced by the state decisions to make either one of the standardized test a mandatory for high school graduates. By standardizing on one test, it is proven that the graduates score is much constant as students are more prepared for the test. In one of the analysis, the drop in mean and median score for SAT 2017 and SAT 2018 compared to ACT score shows that the sudden change in test (e.g. from ACT to SAT) impacted the graduate's total score. It might be due to the fact the state student has been following the specific test syllabus since they joined the school hence a change in test might be disadvantage to them as the subject and test framework might be different.
 
-In order to increase the participation rates, the college board can consider incorporate both of the subject and test framework into the school syllabus itself so that graduates can be familiarize with the both test. With that they can allow the graduates to choose which test (or both) they are more comfortable or confident in, instead of restricting them to a mandatory one. In addition by eliminating barriers to the test, like subsidizing the test cost and offering the graduates greater flexibility to take the exams on weekdays and weekends, graduates that are less fortunate will be able to participate in any of the test.
+In order to increase the participation rates, the college board can consider increase the number of contacts with the states to make SAT mandatory. Else it can also encourage to incorporate both of the subject and test framework into the school syllabus itself so that graduates can be familiarize with the both test. With that they can allow the graduates to choose which test (or both) they are more comfortable or confident in, instead of restricting them to a mandatory one. In addition by eliminating barriers to the test, like subsidizing the test cost and offering the graduates greater flexibility to take the exams on weekdays and weekends, graduates that are less fortunate will be able to participate in any of the test.
 
 
 ### Data
