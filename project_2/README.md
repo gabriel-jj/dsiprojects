@@ -1,177 +1,108 @@
-# Project 2 - Ames Housing Data and Kaggle Challenge
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 2 - Ames Housing Data and Kaggle Challenge
 
-Welcome to Project 2! It's time to start modeling.
+## Gabriel Choo, SG DSI 14
 
-**Primary Learning Objectives:**
-1. Creating and iteratively refining a regression model
-2. Using [Kaggle](https://www.kaggle.com/) to practice the modeling process
-3. Providing business insights through reporting and presentation.
+### Problem Statement
+Ames is a city in Story County, Iowa, United States with 13 constituent neighborhoods. In order to raise value of a property, what are some of the key features or areas that a homeowner should focus on so that the property can fetch a higher price.
 
-You are tasked with creating a regression model based on the Ames Housing Dataset. This model will predict the price of a house at sale.
+### Executive Summary
 
-The Ames Housing Dataset is an exceptionally detailed and robust dataset with over 70 columns of different features relating to houses.
+The objective of this report is to describe and infer our study of the key factors that might affect the sale price of a property in Ames and build a model that can help to determine the estimated sale price of a property.
 
-Secondly, we are hosting a competition on Kaggle to give you the opportunity to practice the following skills:
+The study included a detailed look at the various neighborhood of Ames, as well as the different features and conditions relating to each part of the property.
 
-- Refining models over time
-- Use of train-test split, cross-validation, and data with unknown values for the target to simulate the modeling process
-- The use of Kaggle as a place to practice data science
+It has been observed that the key features that affect the sale price of a property is overall quality, age, size and the neighborhood that the property is located. The feature that appears to add most value to a property is the overall quality of the house and size of the ground living area. The fact that quality has more correlation than condition is that condition defect progress with age while in contrast a quality property grows with age. While size of property is always one of the factor when it comes to measuring of price, we have observed that the greater the proportion of overall ground living area, the higher the sale price is. However, there's one features that can negatively affect the sale price of a property. In one of the correlation analysis, we saw that an increase in the age of the property leads to drop in sale price.  
 
-As always, you will be submitting a technical report and a presentation. **You may find that the best model for Kaggle is not the best model to address your data science problem.**
+Homeowners can actually consider furnishing the overall quality and condition of the house before making a sale so that there's a higher probability that it can fetch a higher price. Since the heart of the home lies in the ground living area, it would be good to give a little update on the tiles and wall paint. Quality repairs to the fixtures and plumbing should also take into considerations as quality is one of the top positive correlation to sale price. Moreover if the property is located in areas like NorthRidge Heights and NorthRidge, homeowners can expect a higher sale price as compared to property in the other neighborhood.
 
-## Set-up
+It should be noted that this model will not generalize to a certain extent as the model only take into consideration of how property price is valuated in Aimes. The model includes the neighborhoods of Aimes in the modelling process hence it might not be applicable to other county or countries. However, in order to create a generalized model that can be used for any property, more datasets from various countries might be needed in the analyzing process.
 
-Before you begin working on this project, please do the following:
+### Data
+For this project we are using Ames Housing Dataset from Kaggle:
+- [Ames Housing Dataset](https://www.kaggle.com/c/dsi-us-6-project-2-regression-challenge/overview)
+- [Data Documentation](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt)
 
-1. Sign up for an account on [Kaggle](https://www.kaggle.com/)
-2. **IMPORTANT**: Click this link ([Regression Challenge Sign Up](https://www.kaggle.com/t/cf68f4a276f44b59a3c6c843dbf9ed1e)) to **join** the competition (otherwise you will not be able to make submissions!)
-3. Review the material on the [DSI-US-6 Regression Challenge](https://www.kaggle.com/c/dsi-us-6-project-2-regression-challenge)
-4. Review the [data description](http://jse.amstat.org/v19n3/decock/DataDocumentation.txt).
+### Data Dictionary
 
-## The Modeling Process
-
-1. The train dataset has all of the columns that you will need to generate and refine your models. The test dataset has all of those columns except for the target that you are trying to predict in your Regression model.
-2. Generate your regression model using the training data. We expect that within this process, you'll be making use of:
-    - train-test split
-    - cross-validation / grid searching for hyperparameters
-    - strong exploratory data analysis to question correlation and relationship across predictive variables
-    - code that reproducibly and consistently applies feature transformation (such as the preprocessing library)
-3. Predict the values for your target column in the test dataset and submit your predictions to Kaggle to see how your model does against unknown data.
-    - **Note**: Kaggle expects to see your submissions in a specific format. Check the challenge's page to make sure you are formatting your CSVs correctly!
-    - **You are limited to models you've learned in class**. In other words, you cannot use XGBoost, Neural Networks or any other advanced model for this project.
-4. Evaluate your models!
-    - consider your evaluation metrics
-    - consider your baseline score
-    - how can your model be used for inference?
-    - why do you believe your model will generalize to new data?
-
-## Submission
-
-**Materials must be submitted by the beginning of class on May 4th.**
-
-Your technical report will be hosted on Github Enterprise. Make sure it includes:
-
-- A README.md (that isn't this file)
-- Jupyter notebook(s) with your analysis and models (renamed to describe your project)
-- At least one successful prediction submission on [DSI-US-6 Regression Challenge](https://www.kaggle.com/c/dsi-us-6-project-2-regression-challenge) --  you should see your name in the "[Leaderboard](https://www.kaggle.com/c/dsi-us-6-project-2-regression-challenge/leaderboard)" tab.
-- Data files
-- Presentation slides
-- Any other necessary files (images, etc.)
-
-**Check with your local instructor for how they would like you to submit your repo for review.**
-
----
-
-## Presentation Structure
-
-- **Must be within time limit established by local instructor.**
-- Use Google Slides or some other visual aid (Keynote, Powerpoint, etc).
-- Consider the audience. **Check with your local instructor for direction**.
-- Start with the **data science problem**.
-- Use visuals that are appropriately scaled and interpretable.
-- Talk about your procedure/methodology (high level).
-- Talk about your primary findings.
-- Make sure you provide **clear recommendations** that follow logically from your analyses and narrative and answer your data science problem.
-
-Be sure to rehearse and time your presentation before class.
-
----
-
-## Rubric
-Your local instructor will evaluate your project (for the most part) using the following criteria.  You should make sure that you consider and/or follow most if not all of the considerations/recommendations outlined below **while** working through your project.
-
-**Scores will be out of 27 points based on the 9 items in the rubric.** <br>
-*3 points per section*<br>
-
-| Score | Interpretation |
-| --- | --- |
-| **0** | *Project fails to meet the minimum requirements for this item.* |
-| **1** | *Project meets the minimum requirements for this item, but falls significantly short of portfolio-ready expectations.* |
-| **2** | *Project exceeds the minimum requirements for this item, but falls short of portfolio-ready expectations.* |
-| **3** | *Project meets or exceeds portfolio-ready expectations; demonstrates a thorough understanding of every outlined consideration.* |
-
-### The Data Science Process
-
-**Problem Statement**
-- Is it clear what the student plans to do?
-- What type of model will be developed?
-- How will success be evaluated?
-- Is the scope of the project appropriate?
-- Is it clear who cares about this or why this is important to investigate?
-- Does the student consider the audience and the primary and secondary stakeholders?
-
-**Data Cleaning and EDA**
-- Are missing values imputed appropriately?
-- Are distributions examined and described?
-- Are outliers identified and addressed?
-- Are appropriate summary statistics provided?
-- Are steps taken during data cleaning and EDA framed appropriately?
-- Does the student address whether or not they are likely to be able to answer their problem statement with the provided data given what they've discovered during EDA?
-
-**Preprocessing and Modeling**
-- Are categorical variables one-hot encoded?
-- Does the student investigate or manufacture features with linear relationships to the target?
-- Have the data been scaled appropriately?
-- Does the student properly split and/or sample the data for validation/training purposes?
-- Does the student utilize feature selection to remove noisy or multi-collinear features?
-- Does the student test and evaluate a variety of models to identify a production algorithm (**AT MINIMUM:** linear regression, lasso, and ridge)?
-- Does the student defend their choice of production model relevant to the data at hand and the problem?
-- Does the student explain how the model works and evaluate its performance successes/downfalls?
-
-**Evaluation and Conceptual Understanding**
-- Does the student accurately identify and explain the baseline score?
-- Does the student select and use metrics relevant to the problem objective?
-- Is more than one metric utilized in order to better assess performance?
-- Does the student interpret the results of their model for purposes of inference?
-- Is domain knowledge demonstrated when interpreting results?
-- Does the student provide appropriate interpretation with regards to descriptive and inferential statistics?
-
-**Conclusion and Recommendations**
-- Does the student provide appropriate context to connect individual steps back to the overall project?
-- Is it clear how the final recommendations were reached?
-- Are the conclusions/recommendations clearly stated?
-- Does the conclusion answer the original problem statement?
-- Does the student address how findings of this research can be applied for the benefit of stakeholders?
-- Are future steps to move the project forward identified?
-
-### Organization and Professionalism
-
-**Project Organization**
-- Are modules imported correctly (using appropriate aliases)?
-- Are data imported/saved using relative paths?
-- Does the README provide a good executive summary of the project?
-- Is markdown formatting used appropriately to structure notebooks?
-- Are there an appropriate amount of comments to support the code?
-- Are files & directories organized correctly?
-- Are there unnecessary files included?
-- Do files and directories have well-structured, appropriate, consistent names?
-
-**Visualizations**
-- Are sufficient visualizations provided?
-- Do plots accurately demonstrate valid relationships?
-- Are plots labeled properly?
-- Are plots interpreted appropriately?
-- Are plots formatted and scaled appropriately for inclusion in a notebook-based technical report?
-
-**Python Syntax and Control Flow**
-- Is care taken to write human readable code?
-- Is the code syntactically correct (no runtime errors)?
-- Does the code generate desired results (logically correct)?
-- Does the code follows general best practices and style guidelines?
-- Are Pandas functions used appropriately?
-- Are `sklearn` methods used appropriately?
-
-**Presentation**
-- Is the problem statement clearly presented?
-- Does a strong narrative run through the presentation building toward a final conclusion?
-- Are the conclusions/recommendations clearly stated?
-- Is the level of technicality appropriate for the intended audience?
-- Is the student substantially over or under time?
-- Does the student appropriately pace their presentation?
-- Does the student deliver their message with clarity and volume?
-- Are appropriate visualizations generated for the intended audience?
-- Are visualizations necessary and useful for supporting conclusions/explaining findings?
-
-### REMEMBER:
-
-This is a learning environment and you are encouraged to try new things, even if they end up failing. While this rubric outlines what we look for in a _good_ project, it is up to you to go above and beyond to create a _great_ project. **Learn from your failures and you'll be prepared to succeed in the workforce**.
+|Feature|Type|Description|
+|:---|:---|:---|
+|**ID**|*int64*|Observation number
+|**PID**|*int64*|Parcel identification number  - can be used with city web site for parcel review
+|**MS Subclass**|*int*|Identifies the type of dwelling involved in the sale
+|**MS Zoning**|*object*|Identifies the general zoning classification of the sale
+|**Lot Frontage**|*float*|Linear feet of street connected to property
+|**lot area**|*int*|Lot size in square feet
+|**Street**|*object*|Type of road access to property
+|**Alley**|*float*|Type of alley access to property
+|**Lot Shape**|*object*|General shape of property
+|**Land Contour**|*object*|Flatness of the property
+|**Utilities**|*object*|Type of utilities available
+|**Lot Config**|*object*|Lot configuration
+|**Land Slope**|*object*|Slope of property
+|**Neighborhood**|*object*|Physical locations within Ames city limits
+|**Condition 1**|*object*|Proximity to various conditions
+|**Condition 2**|*object*|Proximity to various conditions
+|**Bldg Type**|*object*|Type of dwelling
+|**House Style**|*object*|Style of dwelling
+|**Overall Qual**|*int*|Rates the overall material and finish of the house
+|**Overall Cond**|*int*|Rates the overall condition of the house
+|**Year Built**|*int*|Original construction date
+|**Year Remod/Add**|*int*|Remodel date (same as construction date if no remodeling or additions)
+|**Roof Style**|*object*|Type of roof
+|**Roof Matl**|*object*|Roof material
+|**Exterior 1**|*object*|Exterior covering on house
+|**Exterior 2**|*object*|Exterior covering on house (if more than one material)
+|**Mas Vnr Type**|*object*|Masonry veneer type
+|**Mas Vnr Area**|*float*|Masonry veneer area in square feet
+|**Exter Qual**|*int*|Evaluates the quality of the material on the exterior
+|**Exter Cond**|*int*|Evaluates the present condition of the material on the exterior
+|**Foundation**|*object*|Type of foundation
+|**Bsmt Qual**|*float*|Evaluates the height of the basement
+|**Bsmt Cond**|*float*|Evaluates the general condition of the basement
+|**Bsmt Exposure**|*object*|Refers to walkout or garden level walls
+|**BsmtFin Type 1**|*float*|Rating of basement finished area
+|**BsmtFin SF 1**|*float*|Type 1 finished square feet
+|**BsmtFinType 2**|*float*|Rating of basement finished area (if multiple types)
+|**BsmtFin SF 2**|*float*|Type 2 finished square feet
+|**Bsmt Unf SF**|*float*|Unfinished square feet of basement area
+|**Total Bsmt SF**|*float*|Total square feet of basement area
+|**Heating**|*object*|Type of heating
+|**HeatingQC**|*int*|Heating quality and condition
+|**Central Air**|*int*|Central air conditioning
+|**Electrical**|*int*|Electrical system
+|**1st Flr SF**|*int*|First Floor square feet
+|**2nd Flr SF**|*int*|Second floor square feet
+|**Low Qual Fin SF**|*int*|Low quality finished square feet (all floors)
+|**Gr Liv Area**|*int*|Above grade (ground) living area square f
+|**Bsmt Full Bath**|*float*|Basement full bathrooms
+|**Bsmt Half Bath**|*float*|Basement half bathrooms
+|**Full Bath**|*int*|Full bathrooms above grade
+|**Half Bath**|*int*|Half baths above grade
+|**Bedroom**|*int*|Bedrooms above grade (does NOT include basement bedrooms)
+|*Kitchen**|*int*|Kitchens above grade
+|**KitchenQual**|*int*|Kitchen quality
+|**TotRmsAbvGrd**|*int*|Total rooms above grade (does not include bathrooms)
+|**Functional**|*int*|Home functionality (Assume typical unless deductions are warranted)
+|**Fireplaces**|*int*|Number of fireplaces
+|**Garage Type**|*object*|Garage location
+|**Garage Yr Blt**|*float*|Year garage was built
+|**Garage Finish**|*float*|Interior finish of the garage
+|**Garage Cars**|*float*|Size of garage in car capacity
+|**Garage Area**|*float*|Size of garage in square feet
+|**Garage Qual**|*float*|Garage quality
+|**Garage Cond**|*float*|Garage condition
+|**Paved Drive**|*object*|Paved driveway
+|**Wood Deck SF**|*int*|Wood deck area in square feet
+|**Open Porch SF**|*int*|Open porch area in square feet
+|**Enclosed Porch**|*int*|Enclosed porch area in square feet
+|**3-Ssn Porch**|*int*|Three season porch area in square feet
+|**Screen Porch**|*int*|Screen porch area in square feet
+|**Pool Area**|*int*|Pool area in square feet
+|**Pool QC**|*int*|Pool quality
+|**Fence**|*int*|Fence quality
+|**Misc Feature**|*int*|Miscellaneous feature not covered in other categories
+|**Misc Val**|*int*|$Value of miscellaneous feature
+|**Mo Sold**|*int*|Month Sold (MM)
+|**Yr Sold**|*int*|Year Sold (YYYY)
+|**Sale Type**|*object*|Type of sale
+|**SalePrice**|*int*|Sale price $$
