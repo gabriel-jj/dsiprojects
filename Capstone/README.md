@@ -1,48 +1,61 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Capstone Project: Recommender System
+# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Capstone Project: Airline Topic Modelling
 
 ## Gabriel Choo, SG DSI 14
 
+## Problem Statement
+
+Airline ratings affect brandings and consumer decisions to travel with the airline. How can airline leverage on topic modelling to automatically segregate reviews to respective departments so that the departments can execute next call to action in a timely manner?
+
+## Executive Summary
+
+**Exploratory Data Analysis**
+
+The overall ratings is a sentiment of how the user perceived the overall quality in terms of service and attitude of the respective airlines. Looking at the mean overall rating per year as a whole, we can see that the ratings has slid drastically since 2011. This doesn't show positivity as it could mean that the overall standards of the airlines has dropped, else the expectations of the users has increased. The charts shows that this applies to the rest of the ratings including comfort, seats, entertainment and meals.
+
+Singapore airline is ranked one of the top airlines in the world. However according to the charts, it shows that the mean overall rating has dropped from a high score of 8 in 2013 to a score of less than 6 in 2020.
+
+Despite the mean overall rating as a whole is on a slide, but ANA All Nippon Airways showed otherwise. Hence it's important to segregate the reviews into various departments to understand which areas need improvements or require next call of action.
 
 
+**Modelling**
+
+Latent Semantic Analysis (LSA), TF-IDF, Doc2Vec and Word2Vec are techniques used to vectorize the data before feeding into Logistic Regression for modelling.
+TF-IDF and Logistic Regression has shown to be the best performing model at an overall accuracy of 93.9%, with AUC ROC score of 92.5%.
+
+## Conclusions & Recommendations
+
+By automating the topic labelling, we can actually eliminate human errors made on wrong labelling by the staff or consumers. For example, when an online form is used, sometimes consumers don't really understand which specific department their questions or review falls under hence there is a high chance choosing the wrong label. Secondly, some manual labor costs can be saved as sieving out reviews requires manpower. Lastly, if there is any necessary next call of actions, it will be done more timely as the reviews is automatically segregated straight to the respective departments.  
 
 
-Multi-Source Social Feedback of Online News Feeds
-Nuno Moniz and Luís Torgo				
-The data set is made available under a CC-BY license
+### Considerations
 
-## REFERENCE
+There are some considerations to take note of, firstly, the current model is build in a general way. Meaning the number of topics is limited at 3 and it's targeting some specific topics (departments) like airline operations, passenger services and in-flight experience. In order to expand the number of topics, more data from different sources like social media, online forms can be collected to do topic labelling and train classification models to predict the text. Lastly, we could even do more in-depth segregations of topics to enhance the efficiency.
 
-Nuno Moniz and Luís Torgo (2018), “Multi-Source Social Feedback of Online News Feeds”,
-CoRR, abs/1801.07055
-@Article{Moniz2018,
-   title = {Multi-Source Social Feedback of Online News Feeds},
-   author = {Nuno Moniz and Lu\’is Torgo},
-   year = {2018},
-   ee = {https://arxiv.org/abs/1801.07055},
-   volume = {abs/1801.07055},
-   journal = {CoRR},
-}
+### References
+
+**Data**
+- [Skytrax reviews: github](https://github.com/quankiquanki/skytrax-reviews-dataset)
+- [Skytrax reviews: Kaggle](https://www.kaggle.com/efehandanisman/skytrax-airline-reviews)
+- [Skytrax reviews: Scraped](https://www.airlinequality.com/review-pages/a-z-airline-reviews/)
+
+**Data dictionary**
 
 
-VARIABLES OF NEWS DATA
-
-IDLink (numeric): Unique identifier of news items
-Title (string): Title of the news item according to the official media sources
-Headline (string): Headline of the news item according to the official media sources
-Source (string): Original news outlet that published the news item
-Topic (string): Query topic used to obtain the items in the official media sources
-PublishDate (timestamp): Date and time of the news items' publication
-SentimentTitle (numeric): Sentiment score of the text in the news items' title
-SentimentHeadline (numeric): Sentiment score of the text in the news items' headline
-Facebook (numeric): Final value of the news items' popularity according to the social media source Facebook
-GooglePlus (numeric): Final value of the news items' popularity according to the social media source Google+
-LinkedIn (numeric): Final value of the news items' popularity according to the social media source LinkedIn
-
-
-VARIABLES OF SOCIAL FEEDBACK DATA
-
-IDLink (numeric): Unique identifier of news items
-TS1 (numeric): Level of popularity in time slice 1 (0-20 minutes upon publication)
-TS2 (numeric): Level of popularity in time slice 2 (20-40 minutes upon publication)
-TS... (numeric): Level of popularity in time slice ...
-TS144 (numeric): Final level of popularity after 2 days upon publication
+|Feature|Type|Description|
+| --- | --- | --- |
+|**airline_name**|*obj*|airline name|
+|**author**|*obj*|name of user|
+|**date**|*datetime*|date of review|
+|**content**|*obj*|text review|
+|**type_traveller**|*obj*| type of traveller|
+|**cabin_flown**|*obj*| class of travel|
+|**overall_rating**|*int*| overall rating with rating of 1-10|
+|**seat_comfort_rating**|*int*| seat comfort with rating of 1-5|
+|**cabin_staff_rating**|*int*|cabin staff rating with rating of 1-5|
+|**food_beverages_rating**|*int*|meals onboard with rating of 1-5|
+|**inflight_entertainment_rating**|*int*|inflight entertainment with rating of 1-5|
+|**ground_service_rating**|*int*|ground service with rating of 1-5|
+|**value_money_rating**|*int*|value for money with rating of 1-5|
+|**recommended**|*int*|Whether the user recommend the airline|
+|**hubs**|*obj*|The hubs of the airline|
+|**country**|*obj*|The country airline located|
