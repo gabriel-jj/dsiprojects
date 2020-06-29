@@ -4,7 +4,7 @@
 
 ## Problem Statement
 
-Airline ratings affect brandings and consumer decisions to travel with the airline. How can airline leverage on topic modelling to automatically segregate reviews to respective departments so that the departments can execute next call to action in a timely manner?
+Airlines deal with large volumes of unstructured text every day. How can airline leverage on topic modelling to automatically segregate reviews to respective departments so that the departments can execute next call to action in a timely manner?
 
 ## Executive Summary
 
